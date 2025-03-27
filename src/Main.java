@@ -1,5 +1,6 @@
 public class Main {
     public static void main(String[] args) {
+
         int totalSum = 2459000;
         int monthlyFee = 15000;
         int availableAtTheMoment = 0;
@@ -7,8 +8,8 @@ public class Main {
         while (availableAtTheMoment < totalSum) {
             availableAtTheMoment += monthlyFee;
             month += 1;
+            System.out.println("Месяц " + month + ", сумма накоплений равна " + availableAtTheMoment + " рублей");
         }
-        System.out.println("Месяц " + month + ", сумма накоплений равна " + availableAtTheMoment + " рублей");
 
         int i = 1;
         while (i <= 10) {
@@ -16,6 +17,7 @@ public class Main {
             i++;
         }
         System.out.println();
+
         for (int j = 10; j >= 1; j--) {
             System.out.print(j + " ");
         }
@@ -29,6 +31,35 @@ public class Main {
             int died = (population * deathRate) / 1000;
             population += born - died;
             System.out.println("Год " + year + ", численность населения составляет " + population);
+        }
+
+        int deposit = 15000;
+        double interestRate = 0.07;
+        int months = 0;
+        while (deposit < 12000000) {
+            deposit += deposit * interestRate;
+            months++;
+            System.out.println("Месяц " + months + ", сумма накоплений равна " + deposit + " рублей");
+        }
+
+        deposit = 15000;
+        months = 0;
+        while (deposit < 12000000) {
+            deposit += deposit * interestRate;
+            months++;
+            if (months % 6 == 0) {
+                System.out.println("Месяц " + months + ", сумма накоплений равна " + deposit + " рублей");
+            }
+        }
+
+        deposit = 15000;
+        months = 0;
+        for (int year = 1; year <= 9; year++) {
+            for (int halfYear = 1; halfYear <= 2; halfYear++) {
+                deposit += deposit * interestRate * 6;
+                months += 6;
+                System.out.println("Полгода " + (year * 2 - (2 - halfYear)) + ", сумма накоплений равна " + deposit + " рублей");
+            }
         }
 
         int firstFriday = 5;
@@ -51,6 +82,5 @@ public class Main {
                 break;
             }
         }
-
-                }
-            }
+    }
+}
